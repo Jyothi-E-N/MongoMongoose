@@ -10,7 +10,6 @@ const personSchema = new Schema({
     name: { type: String, required: true },
     age: Number,
     favoriteFoods: [String],
-    gender: String,
 });
 
 let Person = mongoose.model("Person", personSchema);
@@ -20,7 +19,6 @@ const createAndSavePerson = (done) => {
         name: "Jyothi E N",
         age: 20,
         favoriteFoods: ["French Fries", "burger", "pizza"],
-        gender: "Female",
     });
 
     Person.save((err, data) => {
