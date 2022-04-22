@@ -21,7 +21,7 @@ const createAndSavePerson = (done) => {
         favoriteFoods: ["French Fries", "burger", "pizza"],
     });
 
-    Person.save((err, data) => {
+    JyothiEN.save((err, data) => {
         if (err) return console.log(err);
         done(null, data);
     });
