@@ -1,66 +1,76 @@
-require('dotenv').config();
-const mongoose = require('mongoose');
+require("dotenv").config();
+const mongoose = require("mongoose");
 
 const mongoUrl = process.env.MONGO_URI;
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const personSchema = new Schema({
-  name: {type: String, required: true},
-  age: Number,
-  favoriteFoods : [String],
-  gender: String
-})
+    name: { type: String, required: true },
+    age: Number,
+    favoriteFoods: [String],
+    gender: String,
+});
 
-let Person = mongoose.model('Person', personSchema);
+let Person = mongoose.model("Person", personSchema);
 
 const createAndSavePerson = (done) => {
-  done(null /*, data*/);
+    var JyothiEN = new Person({
+        name: "Jyothi E N",
+        age: 20,
+        favoriteFoods: ["French Fries", "burger", "pizza"],
+        gender: "Female",
+    });
+
+    Person.save((err, data) => {
+        if (err) return done(err);
+        done(null, data);
+    });
 };
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const findPeopleByName = (personName, done) => {
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const findOneByFood = (food, done) => {
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const findPersonById = (personId, done) => {
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const findEditThenSave = (personId, done) => {
-  const foodToAdd = "hamburger";
+    const foodToAdd = "hamburger";
 
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const findAndUpdate = (personName, done) => {
-  const ageToSet = 20;
+    const ageToSet = 20;
 
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const removeById = (personId, done) => {
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const removeManyPeople = (done) => {
-  const nameToRemove = "Mary";
+    const nameToRemove = "Mary";
 
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 const queryChain = (done) => {
-  const foodToSearch = "burrito";
+    const foodToSearch = "burrito";
 
-  done(null /*, data*/);
+    done(null /*, data*/);
 };
 
 /** **Well Done !!**
